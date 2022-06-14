@@ -30,10 +30,71 @@
   --Pale-Blue: hsl(236, 100%, 87%);
 }
 
-body {
-  background-color: var(--Very-dark-blue);
-  
+/* universal styling */
+* {
+  font-family: rubik, sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
 }
 
 
+/* page body */
+body {
+  background-color: var(--Very-dark-blue);
+}
 
+/* main grid for page content */
+.bodyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* employee tile */
+.employeeContainer {
+  border-radius: 1rem;
+  background-color: var(--Dark-blue);
+  grid-column: 1 /span 1;
+  grid-row: 1 /span 2;
+}
+
+/* employee info box.  Top half of employee container */
+.employeeInfoBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: #5747EA;
+}
+
+/* child elements of employee infoBox */
+.employeeInfoBox img, h1, h6 {
+  margin-left: 1rem;
+}
+
+/* filter buttons on bottom half of employee container */
+.filterButtonBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* filter buttons */
+.filterButtonBox button {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  width: 30%;
+  background-color: var(--Dark-blue);
+  border: none;
+  color: var(--Desaturated-blue);
+}
+
+.monthlyBtn {
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+}
