@@ -1,6 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import FilterButtons from './filterButtons';
+import data from '../data';
 
+// function to get all unique timeFrames from data file
+// const allTimeFrames = ['daily',...new Set(data.map((item)=> item.timeframes))]
+const allTimeFrames =['daily',...new Set(data.map((item) => item.timeframes))];
+
+// employee component with employee information and filter buttons at the bottom
 const Employee = () => {
+    // default state that will only show unique timeframes
+const [timeframes, setTimeFrames] = useState([allTimeFrames]);
+
+// filter function to select different timeframes
+const filterTimeFrames = (timeframe) => {
+    const newTimeFrames = data.filter((item)=>item.timeframes === timeframe);
+    setTimeFrames(newTimeFrames);
+
+  }
+
+
+
     return (
         <div className='employeeContainer'>
             <div className='employeeInfoBox'>
@@ -8,13 +27,7 @@ const Employee = () => {
                 <h6>Report for</h6>
                 <h1>Jeremy Robson</h1>
             </div>
-            <div className='filterButtonBox'>
-                
-                <button>Daily</button>
-                <button>Weekly</button>
-                <button className='monthlyBtn'>Monthly</button>
-            </div>
-            
+            <FilterButtons filterTimeFrames = {filterTimeFrames} timeframes = {timeframes}/>
         </div>
         
         
