@@ -9,6 +9,7 @@ const Employee = () => {
                 <h1>Jeremy Robson</h1>
             </div>
             <div className='filterButtonBox'>
+                
                 <button>Daily</button>
                 <button>Weekly</button>
                 <button className='monthlyBtn'>Monthly</button>
@@ -16,8 +17,11 @@ const Employee = () => {
             
         </div>
         
+        
     );
 
 }
+
+
 
 export default Employee;
